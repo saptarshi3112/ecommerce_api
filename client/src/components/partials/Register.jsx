@@ -43,6 +43,7 @@ const Register = ({ registerModalOpen, openRegisterModal }) => {
 
     // disable default behavior.
     e.preventDefault();
+
     if (first_name && last_name && email && password) {
 
     }
@@ -53,25 +54,19 @@ const Register = ({ registerModalOpen, openRegisterModal }) => {
       <Modal show={show} onHide={() => { setShow(false); openRegisterModal(false); }}>
         <Modal.Body>
           <Modal.Header closeButton></Modal.Header>
+          <Modal.Title>Register</Modal.Title>
           <Card>
             <Card.Body>
-              <Card.Title className="text-uppercase text-center">Register</Card.Title>
               <Form onSubmit={handleRegisterSubmit}>
                 <div className="form-group">
-
                   <div className="row">
                     <div className="col-lg-6">
-
                       <input className="form-control" name="first_name" type="text" placeholder="First name" onChange={handleChange} value={first_name} />
-
                     </div>
                     <div className="col-lg-6">
-
                       <input className="form-control" name="last_name" type="text" placeholder="Last name" onChange={handleChange} value={last_name} />
-
                     </div>
                   </div>
-
                 </div>
                 <div className="form-group">
                   <input className="form-control" name="email" type="email" placeholder="Email" onChange={handleChange} value={email} />

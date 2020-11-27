@@ -3,7 +3,11 @@ import {
 } from '../actions';
 
 
-const initialState = {};
+const initialState = {
+  isLoggedIn: false,
+  token: localStorage.getItem('token'),
+  user: localStorage.getItem('user')
+};
 
 
 export const authReducer = (state=initialState, action) => {

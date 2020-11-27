@@ -3,6 +3,10 @@ import {
   useEffect
 } from 'react';
 
-export default function Home() {
-
+const Home = () => {
+  return (
+    <div>heu hokme</div>
+  )
 };
+
+export { Home };

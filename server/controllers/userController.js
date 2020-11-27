@@ -35,7 +35,7 @@ module.exports = {
               if (result) {
                 // token generate.
                 authHelper.generateToken(userFound)
-                  .then(token => res.json({ ...statusMessage.USER200, token }))
+                  .then(userDetails => res.json({ ...statusMessage.USER200, userDetails }))
                   .catch((err) => res.json({ ...statusMessage.SERVER500, error: err.message }));
               } else {
                 res.json(statusMessage.USER401);

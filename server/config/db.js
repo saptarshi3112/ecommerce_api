@@ -5,9 +5,7 @@ const {
 const constants = require('./constants');
 
 module.exports = () => {
-
   const connectionString = `mongodb://${constants.dbHost}:${constants.dbPort}/${constants.dbName}`;
-
   mongoose.connect(connectionString, {
     useNewUrlParser: true,
     useUnifiedTopology: true,

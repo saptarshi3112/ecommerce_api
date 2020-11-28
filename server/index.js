@@ -26,7 +26,7 @@ app.use(bodyParser.urlencoded({
 app.use(cors());
 
 //
-app.use('/', routerLogger, router);
+app.use('/api/', routerLogger, router);
 
 
 const port = constants.port;

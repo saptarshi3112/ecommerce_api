@@ -1,7 +1,4 @@
-const { mongo, model, Schema } = require('mongoose');
-const {
-  mongoose
-} = require('../require');
+const { mongoose } = require('../require');
 
 const cartSchema = new mongoose.Schema({
   user_id: {

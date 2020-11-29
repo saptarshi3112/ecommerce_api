@@ -100,7 +100,34 @@ const userRegistration = (req, res) => {
     .catch((err) => res.json({ ...statusMessage.SERVER500, error: err.message }));
 };
 
+const editUserDetails = (req, res) => {
+
+  const {
+    _id,
+    first_name,
+    last_name,
+    email,
+    password,
+    profile_pic
+  } = req.body;
+
+  // get all the params that can be edited.
+  User.findOne(_id)
+    .then(userFound => {
+      if (!userFound) {
+        res.json('no user found');
+      } else { 
+
+        // make changes to the user model.
+
+      }
+    })
+    .catch(err => res.json({ ...statusMessage.SERVER500, error: err.message }))
+
+}
+
 module.exports = {
   userLogin,
-  userRegistration
+  userRegistration,
+  editUserDetails
 };

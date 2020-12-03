@@ -28,7 +28,6 @@ app.use(cors());
 //
 app.use('/api/', routerLogger, router);
 
-
 const port = constants.port;
 app.listen(port, (err) => {
   if (err) {
@@ -37,4 +36,3 @@ app.listen(port, (err) => {
     console.log(`server on ${port}`);
   }
 });
-

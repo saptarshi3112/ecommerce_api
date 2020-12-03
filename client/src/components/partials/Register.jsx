@@ -8,9 +8,15 @@ import {
   Form
 } from 'react-bootstrap';
 
+import {
+  useDispatch
+} from 'react-redux';
+
 const Register = ({ registerModalOpen, openRegisterModal }) => {
 
   let [show, setShow] = useState(false);
+
+  const dispatch = useDispatch();
 
   useEffect(() => {
     setShow(registerModalOpen);
@@ -37,6 +43,7 @@ const Register = ({ registerModalOpen, openRegisterModal }) => {
     } = e.target;
 
     setRegisterInput({ ...registerInput, [name]: value });
+
   };
 
   const handleRegisterSubmit = e => {
@@ -45,7 +52,7 @@ const Register = ({ registerModalOpen, openRegisterModal }) => {
     e.preventDefault();
 
     if (first_name && last_name && email && password) {
-
+      
     }
   };
 

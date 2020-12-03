@@ -10,7 +10,12 @@ const {
   validUser
 } = require('../middlewares');
 
-router.get('/getAllProduct', validUser, productController.getAllProducts);
 
+// get request
+router.get('/getAllProduct', validUser, productController.getAllProducts);
+router.get('/getProductByCategory/:categoryName', validUser, productController.getProductByCategory);
+
+// post request
+router.post('/addNewProduct', validUser, productController.addNewProduct);
 
 module.exports = router;

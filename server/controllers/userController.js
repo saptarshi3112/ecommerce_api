@@ -13,6 +13,7 @@ const {
 const {
   authHelper
 } = require('../helpers');
+const e = require('express');
 
 /**
  * 
@@ -100,6 +101,12 @@ const userRegistration = (req, res) => {
     .catch((err) => res.json({ ...statusMessage.SERVER500, error: err.message }));
 };
 
+/**
+ * Edit details of an user 
+ * @param {*} req 
+ * @param {*} res 
+ * @returns {Promise}
+ */
 const editUserDetails = (req, res) => {
 
   const {
@@ -126,8 +133,27 @@ const editUserDetails = (req, res) => {
 
 }
 
+const deleteUser = (req, res) => {
+  const {
+    _id
+  } = req.user;
+
+  User.findByIdAndDelete(_id)
+    .then(userDeleted => {
+      if (!userDeleted) {
+        res.json('unable to login')
+      } else { 
+        res.json('user deleted');
+      }
+    })
+    .catch(err => res.json({
+      ...statusMessage.SERVER500, error: err.message
+    }))
+}
+
 module.exports = {
   userLogin,
   userRegistration,
-  editUserDetails
+  editUserDetails,
+  deleteUser
 };
